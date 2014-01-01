@@ -1,7 +1,27 @@
 $def with (name)
 <html>
-<body>
+<style type="text/css">
+tr.d0 td {
+	background-color: #99E699; color: black;
+}
+tr.d1 td {
+	background-color: #EBFAEB; color: black;
+}
+</style>
+<table>
+
+<body font-family:Verdana;font-size:12px>
+$ count=0
+<table>
 $for i in name:
-	</li><a href='/innebandy/list/$i[0]'>$i[1]</a><br>
+	$if count==0:
+		$ count=1
+		<tr class=d0>
+	$else:
+		$ count=0
+		<tr class=d1>
+		
+	<td><a href='/innebandy/list/$i[0]'>$i[1]</a></td></tr>
+</table>
 </body>
 </html>
