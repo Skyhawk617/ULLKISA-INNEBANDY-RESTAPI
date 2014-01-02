@@ -42,8 +42,8 @@ def validate_key(fn):
 render = web.template.render('../templates')
 class list_teams:
     def GET(self):
-        for i in fixtures:
-            print i[1]
+        #for i in fixtures:
+        #    print i[1]
         return render.innebandy(fixtures)
             
 class list_fixtures:
@@ -55,14 +55,14 @@ class list_fixtures:
                     name_set = True
                     teamfixture = i[2]
                     teamname = i[1]
-                print "assigning "
-            print i[0] #+ "Name:" + name
+                #print "assigning "
+            #print i[0] #+ "Name:" + name
         return render.fixtures(teamname, teamfixture)
     
 class index:
     def GET(self):
         data = web.data()
-        print "Data:" + data
+        #print "Data:" + data
 
         #print render.hello('world')
         return render.index()
